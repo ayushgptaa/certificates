@@ -11,9 +11,10 @@
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
 					Droid Sans, Helvetica Neue, sans-serif;
 				display: flex;
-				flex-direction: column;
+				height: 100%;
 				justify-content: center;
 				align-items: center;
+				margin-top: 100px;
 			}
 
 			img {
@@ -22,7 +23,41 @@
 		</style>
 	</head>
 
-	<body>
-		<img src="./vasu.jpeg" alt="vasu" width="70%" />
+	<body id="root">
+		<!-- <img src="./vasu.jpeg" width="70%" /> -->
 	</body>
+
+	<script>
+		const root = document.getElementById('root');
+
+		const number = new URLSearchParams(window.location.search).get('q');
+
+		switch (number) {
+			case 'NPTEL21ME03T2370553':
+				root.innerHTML = '<img src="./assets/vasu.jpeg"  width="70%" />';
+				break;
+			case 'NPTEL2HS83S13700281':
+				root.innerHTML = '<img src="./assets/aditya.jpeg"  width="70%" />';
+				break;
+			case 'NPTEL22CE22S33600132':
+				root.innerHTML = '<img src="./assets/arshdeep.jpeg" width="70%" />';
+				break;
+			case 'NPTEL22ME55S43600994':
+				root.innerHTML = '<img src="./assets/talvinder.jpeg"  width="70%" />';
+				break;
+			case 'NPTEL21ME03S23710455':
+				root.innerHTML = '<img src="./assets/barun.jpeg"  width="70%" />';
+				break;
+
+			case '':
+				root.innerHTML = '<h1> No Query Entered </h1>';
+
+				break;
+
+			default:
+				root.innerHTML = '<h1> Wrong Query Entered </h1>';
+
+				break;
+		}
+	</script>
 </html>
